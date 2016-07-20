@@ -7,6 +7,8 @@ Vote.delete_all
 
 
 cat = Category.create(topic: "Video Games")
+kim_k = Category.create(topic: "Kim K")
+social = Category.create(topic: "Social Media")
 
 smack_1 = Smack.create(title: "I heard your baby crying in the background over voice-comm", description: "You should grow up and get a life by this point... Don't you have to go to work in the morning?")
 
