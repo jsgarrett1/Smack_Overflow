@@ -9,10 +9,14 @@ get '/categories/:category_id/smacks/new' do
 end
 
 post '/categories/:category_id/smacks' do
-  @smack = Smack.new(params[:smack])
+  @category = Category.find_by(id: params[:category_id])
+  puts "---------------------"
+  p @category
+  @smack = Smack.new(title: params[:title], description: params[:description])
 
   if @smack.save
-    redirect "smacks/#{smack.id}"
+    @category.smacks << @smack
+    redirect "categories/#{@category.id}"
   else
     @errors = @entry.errors.full_messages
     erb :'smacks/new'
