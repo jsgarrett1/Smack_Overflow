@@ -21,23 +21,19 @@
   <header>
     <nav id="topbar">
       <a href='/'><img id="logo" src="images/smack_overflow_logo.png" alt="Smack Overflow"></a>
-      <ul class="nav-links">
+      <div id="nav-wrapper">
+        <ul id="nav">
         <% if @user %>
-        <li class="home-links"><%= @user.username %></li>
-        <li clas="home-links">logout</li>
-      <% else %>
-        <li class="home-links">Register</li>
-        <li class="home-links">Login</li>
+          <li><form method="post" action='/users/logout'>
+            <input name="_method" type="hidden" value="delete"><input type="submit" value="Log out"></li>
+          </form>
+          <li><%= @user.username %></li>
+        <% else %>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/new">Register</a></li>
       <% end %>
       </ul>
     </nav>
-    <div id="nav-wrapper">
-  <ul id="nav">
-    <li><a href="/users/login">Login</a></li>
-    <li><a href="/users/new">Register</a></li>
-    <li><a href="">Logout</a></li>
-    <li><a href="">Profile</a></li>
-  </ul>
 </div>
   </header>
 
