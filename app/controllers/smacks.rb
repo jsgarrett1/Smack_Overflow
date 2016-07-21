@@ -37,6 +37,36 @@ post '/smacks/:id/down_vote' do
   erb :'smacks/show'
 end
 
+post '/categories/:category_id/smacks/:smack_id/comebacks/new' do
 
+  if request.xhr?
+    user = User.find(session[:user_id])
+    smack = Smack.find(params[:smack_id])
+    comeback = Comeback.create(description: params[:comeback], user: user, smack: smack)
+    puts "worked"
+  else
+    user = User.find(session[:user_id])
+    category = Category.find(params[:category_id])
+    smack = Smack.find(params[:smack_id])
+    comeback = Comeback.create(description: params[:comeback], user: user, smack: smack)
+    puts "worked"
+    redirect "/category/#{category.id}/smacks/#{smack.id}"
+  end
 
+end
 
+post "/categories/:category_id/smacks/:smack_id/comments/new" do
+
+  if request.xhr?
+    user = User.find(session[:user_id])
+    smack = Smack.find(params[:smack_id])
+    comment = Comment.create(description: params[:smack_comment], user: user, smack: smack)
+  else
+    user = User.find(session[:user_id])
+    category = Category.find(params[:category_id])
+    smack = Smack.find(params[:smack_id])
+    comment = Comment.create(description: params[:smack_comment], user: user, smack: smack)
+    redirect "/category/#{category.id}/smacks/#{smack.id}"
+  end
+
+end
