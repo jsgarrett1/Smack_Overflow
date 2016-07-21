@@ -94,17 +94,56 @@ th {
 
 .category-image:hover {
 
-  opacacity: 0.7;
+  opacity: 0.7;
 
 }
 
 .home-categories:hover {
-/*  border: 12px solid #f69c55;
-*/  opacacity: 0.7;
+  opacity: 0.7;
+  border: 12px solid orange;
 }
 
-/*.home-categories:hover .imgDescription {
-  visibility: visible;
-  opacity: 1;
-}*/
+#nav-wrapper {
+width:465px;
+margin:0 auto;
+padding:20px 0;
+background:#dddddd;
+}
+
+ul#nav {
+font-family: Verdana;
+font-size:14px;
+list-style:none;
+margin:0 auto;
+padding:0;
+width:455px;
+overflow: auto;
+}
+
+ul#nav li {
+display:inline;
+}
+
+ul#nav li a {
+text-decoration:none;
+display: block;
+padding:5px 21px;
+background:#666;
+color:#ddd;
+float:left;
+text-align:center;
+border-top:2px solid #555555;
+border-right:2px solid #aaaaaa;
+border-bottom:2px solid #aaaaaa;
+border-left:2px solid #555555;
+}
+
+ul#nav li a:hover {
+background:#f69c55;
+color:#ffffff;
+border-top:2px solid #815444;
+border-right:2px solid #c59888;
+border-bottom:2px solid #c59888;
+border-left:2px solid #815444;
+}
 
