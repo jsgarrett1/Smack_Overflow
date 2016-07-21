@@ -1,20 +1,24 @@
 <h2><%= @smack.title %></h2>
 <p><%= @smack.description %></p>
+<h4><%= total_votes(@smack) %></h4>
 <h6><%= @smack.user.username %></h6>
 <h6><%= @smack.created_at %></h6>
 
 <br>
 <% @smack.comments.each do |comment| %>
   <p><%= comment.description %></p>
+  <h4><%= total_votes(comment) %></h4>
   <h6><%= comment.user.username %></h6>
   <h6><%= comment.created_at %></h6>
 <% end %>
 <% @smack.comebacks.each do |comeback| %>
 <h4><%= comeback.description %></h4>
+<h4><%= total_votes(comeback) %></h4>
 <h6><%= comeback.user.username %></h6>
 <h6><%= comeback.created_at %></h6>
   <% comeback.comments.each do |comment| %>
     <p><%= comment.description %></p>
+    <h4><%= total_votes(comment) %></h4>
     <h6><%= comment.user.username %></h6>
     <h6><%= comment.created_at %></h6>
 
