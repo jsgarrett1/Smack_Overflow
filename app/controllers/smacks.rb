@@ -22,5 +22,21 @@ post '/categories/:category_id/smacks' do
     @errors = @entry.errors.full_messages
     erb :'smacks/new'
   end
+
 end
+
+post '/smacks/:id/up_vote' do
+  @smack = Smack.find(params[:id])
+  @smack.votes.create(value: 1)
+  erb :'smacks/show'
+end
+
+post '/smacks/:id/down_vote' do
+  @smack = Smack.find(params[:id])
+  @smack.votes.create(value: -1)
+  erb :'smacks/show'
+end
+
+
+
 
