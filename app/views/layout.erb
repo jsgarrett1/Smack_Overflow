@@ -19,9 +19,9 @@
 </head>
 <body>
   <header>
-  <a href='/'>SmackOverflow</a>
-    <nav>
-      <ul id="navlist">
+    <nav id="topbar">
+      <a href='/'><img id="logo" src="images/logo.png" alt="Smack Overflow"></a>
+      <ul>
         <% if @user %>
         <li><%= @user.username %></li>
         <li>logout</li>
