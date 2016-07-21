@@ -7,3 +7,19 @@
 th {
   text-align: left;
 }
+
+.make-these-in-line {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+#navlist li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.in-line-block {
+  display: inline-block;
+}
