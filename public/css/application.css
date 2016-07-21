@@ -23,3 +23,32 @@ th {
 .in-line-block {
   display: inline-block;
 }
+
+.vertical-align {
+  vertical-align: top;
+}
+
+.hide-link-style {
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+  display: block;
+  width: 200px;
+  height: 200px;
+  /*background: grey;*/
+}
+
+.home-categories {
+  width: 200px;
+  height: 200px;
+  border: 12px solid black;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.home-categories:hover {
+  border: 12px solid orange;
+}

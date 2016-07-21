@@ -22,8 +22,8 @@
   <a href='/'>SmackOverflow</a>
     <nav>
       <ul id="navlist">
-        <% if session[:user_id] %>
-        <li><%= User.find_by(id: session[:user_id]).username %></li>
+        <% if @user %>
+        <li><%= @user.username %></li>
         <li>logout</li>
       <% else %>
         <li>register</li>
