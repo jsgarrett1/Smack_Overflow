@@ -1,4 +1,5 @@
 get '/' do
-  # Look in app/views/index.erb
+  @categories =  Category.all
+  @user = User.find_by(id: session[:user_id])
   erb :index
 end
