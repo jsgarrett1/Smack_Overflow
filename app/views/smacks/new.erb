@@ -1,0 +1,21 @@
+
+<% if @errors %>
+  <span>Something went wrong:</span>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form method="post" action="/entries">
+  <label for="title-input">Title:</label>
+  <input id="title-input" name="smack[title]" type="text" value="">
+  <br>
+  <br>
+  <label for="body-textarea">Description:</label>
+  <textarea id="body-textarea" name="smack[description]" tabindex="2" value=""></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Post" tabindex="3" class="">
+</form>

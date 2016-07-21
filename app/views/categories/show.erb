@@ -1,4 +1,5 @@
 <div>
+  <a href="/categories/<%= @category.id %>/smacks/new">Create a Smack!</a>
 <% @category.smacks.each do |smack| %>
   <div>
     <a href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
