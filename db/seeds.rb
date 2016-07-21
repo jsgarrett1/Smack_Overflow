@@ -1,6 +1,0 @@
-Category.create(topic: "one")
-Category.create(topic: "two")
-Category.create(topic: "three")
-Category.create(topic: "four")
-Category.create(topic: "five")
-Category.create(topic: "six")
