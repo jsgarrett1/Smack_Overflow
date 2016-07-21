@@ -1,8 +1,8 @@
 <div class="container">
 <% @categories.each do |category| %>
-<div>
-  <div class="in-line-block">
-    <a href='/categories/<%= category.id %>'><%= category.topic %></a>
+<div class="in-line-block vertical-align">
+  <div class="home-categories">
+    <a class="hide-link-style" href='/categories/<%= category.id %>'><%= category.topic %></a>
   </div>
 </div>
 <% end %>
