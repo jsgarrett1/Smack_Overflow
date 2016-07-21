@@ -1,6 +1,5 @@
 get '/users/new' do
 
-
   erb :'/users/new'
 end
 
@@ -18,6 +17,27 @@ post '/users' do
   else
     @errors = user.errors.full_messages
     erb :'/users/new'
+  end
+
+end
+
+get '/users/login' do
+
+  erb :'/users/login'
+
+end
+
+post '/users/login' do
+  email = params[:email]
+  password = params[:password]
+
+  user = User.find_by(email: email)
+  if user.authenticate(password)
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    @errors = "Your login information is not correct."
+    erb :'/users/login'
   end
 
 end
