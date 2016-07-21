@@ -1,10 +1,14 @@
 <a href="/categories/<%= @smack.category.id %>">Back to <%= @smack.category.topic.capitalize %></a>
 <h2><%= @smack.title %></h2>
+<form method="post" action='/smacks/<%= "#{@smack.id}" %>/up_vote'>
+<input type="submit" value="Upvote"></form>
+<form method="post" action='/smacks/<%= "#{@smack.id}" %>/down_vote'>
+<input type="submit" value="Downvote"></form>
 <p><%= @smack.description %></p>
 <h4><%= total_votes(@smack) %></h4>
 <h6><%= @smack.user.username %></h6>
 <h6><%= @smack.created_at %></h6>
-
+<!-- <input name="_method" type="hidden" value="post"> -->
 <br>
 <% @smack.comments.each do |comment| %>
   <p><%= comment.description %></p>
@@ -13,6 +17,10 @@
   <h6><%= comment.created_at %></h6>
 <% end %>
 <% @smack.comebacks.each do |comeback| %>
+<form method="post" action='/comebacks/<%= "#{comeback.id}" %>/up_vote'>
+<input type="submit" value="Upvote"></form>
+<form method="post" action='/comebacks/<%= "#{comeback.id}" %>/down_vote'>
+<input type="submit" value="Downvote"></form>
 <h4><%= comeback.description %></h4>
 <h4><%= total_votes(comeback) %></h4>
 <h6><%= comeback.user.username %></h6>
