@@ -108,8 +108,8 @@ politics_user4.save!
 
 # Create Smack and Assign Users
 politics_smack1 = Smack.create(title: "Why can’t Donald Trump be a Lannister?", description: "Because he never pays his debts.")
-politics_comment1 = Comment.create(description: "Dammmmnnn!!!")
-politics_comeback1 = Comeback.create(description: "And now the rains weep o’er his hall and not a soul to hear…… Donald Trump cry about his little hands.")
+politics_comment1 = Comment.create(description: "Dammmmnnn!!!", user: politics_user1)
+politics_comeback1 = Comeback.create(description: "And now the rains weep o’er his hall and not a soul to hear…… Donald Trump cry about his little hands.", user: politics_user1)
 
 politics_smack1.comments << politics_comment1
 politics_smack1.comebacks << politics_comeback1
@@ -120,8 +120,8 @@ politics_comeback1.user = politics_user3
 
 # Create Smack and Assign Users
 politics_smack2 = Smack.create(title: "How is Donald Trump going to shut down the Department of Education?")
-politics_comment2 = Comment.create(description: "Oh snap")
-politics_comeback2 = Comeback.create(description: "I heard he hasn’t read a book in 20 years")
+politics_comment2 = Comment.create(description: "Oh snap", user: politics_user2)
+politics_comeback2 = Comeback.create(description: "I heard he hasn’t read a book in 20 years", user: politics_user2)
 
 politics_smack2.comments << politics_comment2
 politics_smack2.comebacks << politics_comeback2
@@ -132,8 +132,8 @@ politics_comeback2.user = politics_user1
 
 # Create Smack and Assign Users
 politics_smack3 = Smack.create(title: "Have you seen the Clint Eastwood movie about Donald Trump?", description: "Its called ‘Billion Dollar Cry Baby.’")
-politics_comment3 = Comment.create(description: "Zing!")
-politics_comeback3 = Comeback.create(description: "Cic Maith Sa Toin Ata De Dlith Air, -translation ‘He needs a good kick in the arse")
+politics_comment3 = Comment.create(description: "Zing!", user: politics_user3)
+politics_comeback3 = Comeback.create(description: "Cic Maith Sa Toin Ata De Dlith Air, -translation ‘He needs a good kick in the arse", user: politics_user1)
 
 politics_smack3.comments << politics_comment3
 politics_smack3.comebacks << politics_comeback3
@@ -144,8 +144,8 @@ politics_comeback3.user = politics_user1
 
 # Create Smack and Assign Users
 politics_smack4 = Smack.create(title: "If Donald Trump is elected for president", description: "There will be hell tupee")
-politics_comment4 = Comment.create(description: "HAHAHAH!!")
-politics_comeback4 = Comeback.create(description: "The hardest part about Donald Trumps presidency will be to find a cabinet for that thing on his head.")
+politics_comment4 = Comment.create(description: "HAHAHAH!!", user: politics_user4)
+politics_comeback4 = Comeback.create(description: "The hardest part about Donald Trumps presidency will be to find a cabinet for that thing on his head.", user: politics_user1)
 
 politics_smack4.comments << politics_comment4
 politics_smack4.comebacks << politics_comeback4
@@ -169,12 +169,12 @@ politics_category.smacks << politics_smack4
 coding_category = Category.create(topic: "Coding")
 
 coding_smack1 = Smack.create(title: "A coworker just said I’m so bad at programming I should have never been born.", description: "My co-worker said I’m so awful at programming that I should have never been born and my mother must have passed on her ‘idiot’ genes to me. What can I say back?")
-coding_comment1 = Comment.create(description: "Leave the mothers out of this")
-coding_comeback1 = Comeback.create(description: "Yo momma so poor her bank balance says nil.")
-coding_comment2 = Comment.create(description: "Dayuummmmnnnnnn")
-coding_comeback2 = Comeback.create(description: "Yo momma services more requests than http.")
-coding_comment3 = Comment.create(description: "LOLZ")
-coding_comment4 = Comment.create(description: "Ohhh shitt")
+coding_comment1 = Comment.create(description: "Leave the mothers out of this", user: politics_user1)
+coding_comeback1 = Comeback.create(description: "Yo momma so poor her bank balance says nil.", user: politics_user1)
+coding_comment2 = Comment.create(description: "Dayuummmmnnnnnn", user: politics_user2)
+coding_comeback2 = Comeback.create(description: "Yo momma services more requests than http.", user: politics_user4)
+coding_comment3 = Comment.create(description: "LOLZ", user: politics_user1)
+coding_comment4 = Comment.create(description: "Ohhh shitt", user: politics_user3)
 
 coding_smack1.comments << coding_comment1
 coding_smack1.comebacks << coding_comeback1
@@ -207,10 +207,10 @@ coding_comment3.user = coding_user3
 coding_comment4.user = coding_user2
 
 coding_smack2 = Smack.create(title: "PC users are mentally incapable of appreciating the finer things in life.", description: "I guess they're just used to being slow...;)")
-coding_comeback3 = Comeback.create(description: "I’d tell you to go jump out of a building but Macs don’t support Windows.")
-coding_comeback4 = Comeback.create(description: "Real programmers use linux. Ubuntu 4 life")
-coding_comment5 = Comment.create(description: "Ubuntu is an ancient african word that means 'i cant configure debian")
-coding_comment6 = Comment.create(description: "Damn son.")
+coding_comeback3 = Comeback.create(description: "I’d tell you to go jump out of a building but Macs don’t support Windows.", user: politics_user1)
+coding_comeback4 = Comeback.create(description: "Real programmers use linux. Ubuntu 4 life", user: politics_user1)
+coding_comment5 = Comment.create(description: "Ubuntu is an ancient african word that means 'i cant configure debian", user: politics_user1)
+coding_comment6 = Comment.create(description: "Damn son.", user: politics_user1)
 
 coding_smack2.comebacks << coding_comeback3
 coding_smack1.comebacks << coding_comeback4
