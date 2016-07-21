@@ -1,9 +1,12 @@
-<div class="container">
+<div>
+  <% @counter = 0 %>
+<% @images = ["images/kimk.jpg", "images/socialmedia.jpg", "images/videogames.jpg", "images/politics.jpg", "images/coding.jpg", "images/sports.jpg"] %>
 <% @categories.each do |category| %>
 <div class="in-line-block vertical-align">
   <div class="home-categories">
-    <a class="hide-link-style" href='/categories/<%= category.id %>'><%= category.topic %></a>
+    <a class="hide-link-style" href='/categories/<%= category.id %>'><p><%= category.topic %></p><img src='<%= @images[@counter] %>' class="category-image"></a>
   </div>
 </div>
-<% end %>
+  <% @counter += 1 %>
+  <% end %>
 </div>
