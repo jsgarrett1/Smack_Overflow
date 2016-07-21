@@ -15,7 +15,7 @@ gem 'activerecord', '~>4.2'
 
 gem 'rake'
 gem 'bcrypt'
-gem 'date'
+
 
 gem 'shotgun'
 
