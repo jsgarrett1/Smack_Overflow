@@ -7,8 +7,12 @@
 <div>
 <% @category.smacks.each do |smack| %>
   <div>
-  <a href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
-  <p><%= smack.description %></p>
+    <a href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
+    <p><%= smack.description %></p>
+    <h3><%= total_votes(smack) %></h3>
+    <h3><%= smack.comebacks.count %></h3>
+    <h6><%= smack.user.username %></h6>
+    <h6><%= smack.created_at %></h6>
   </div>
 <% end %>
 </div>
