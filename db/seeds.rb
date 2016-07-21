@@ -246,7 +246,7 @@ coding_category.smacks << coding_smack2
 
 # Sports Smacks
 
-Category.create(topic: "Sports")
+sports_category = Category.create(topic: "Sports")
 
 # SMACK TALK 1
 soccer_user1 = User.new(username: "EnglandDomination", email: "Craig1980@gmail.com", password: "password")
@@ -328,7 +328,8 @@ nba_user4.save!
 
 nba_comeback2 = Comeback.create(description: "Told my boss this smack. I got fired. :(", smack: nba_smack, user: nba_user4)
 
-
-
+sports_category.smacks << spain_smack
+sports_category.smacks << ball_smack1
+sports_category.smacks << nba_smack
 
 
