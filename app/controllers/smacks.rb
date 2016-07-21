@@ -13,6 +13,7 @@ post '/categories/:category_id/smacks' do
   puts "---------------------"
   p @category
   @smack = Smack.new(title: params[:title], description: params[:description])
+  @smack.user = User.find(session[:user_id])
 
   if @smack.save
     @category.smacks << @smack

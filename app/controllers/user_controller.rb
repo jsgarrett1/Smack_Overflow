@@ -27,6 +27,11 @@ get '/users/login' do
 
 end
 
+delete "/users/logout" do
+  session[:user_id] = nil
+  redirect '/'
+end
+
 post '/users/login' do
   email = params[:email]
   password = params[:password]
