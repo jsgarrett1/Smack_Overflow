@@ -25,13 +25,13 @@
         <h6><%= comment.created_at %></h6>
       </div>
   </div>
-    <button id="new_smack_comment_button" class="button center">New Smack Comment</button>
+  <% end %>
+  <button id="new_smack_comment_button" class="button center">New Smack Comment</button>
     <form id="smack_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comments/new"class="center hidden">
     <label for="smack_comment">Comment:</label>
     <textarea id="smack_comment" name="smack_comment"></textarea>
     <input type="submit" class="button" value="Submit Comment"></input>
   </form>
-  <% end %>
   <div id="comebacks">
     <% @smack.comebacks.each do |comeback| %>
     <form class="vote-button" method="post" action='/comebacks/<%= "#{comeback.id}" %>/up_vote'>
@@ -55,6 +55,12 @@
       </div>
   </div>
   <% end %>
+    <button id="new_comeback_comment_button" class="button center">New Comeback Comment</button>
+    <form id="comeback_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/<%= comeback.id %>/comments/new"class="center hidden">
+    <label for="smack_comment">Comment:</label>
+    <textarea id="comeback_comment" name="comeback_comment"></textarea>
+    <input type="submit" class="button" value="Submit Comment"></input>
+  </form>
 <% end %>
 </div>
 <button id="new_comeback_button" class="button center">New Comeback</button>
