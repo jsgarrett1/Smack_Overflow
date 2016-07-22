@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_uniqueness_of :username
 
+  def user_points
+    total = 0
+    self.smacks.each do |smack|
+      total += total_votes(smack)
+    end
+    total
+  end
+
 
   def password
     @password ||= BCrypt::Password.new(password_hash)

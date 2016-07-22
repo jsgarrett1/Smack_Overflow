@@ -67,8 +67,8 @@ th {
 }
 
 .home-categories img {
-  width: 500px;
-  height: 500px;
+  width: 492px;
+  height: 492px;
 }
 
 
@@ -93,16 +93,18 @@ th {
 }
 
 .home-categories:hover {
-  box-sizing: border-box;
+
   opacity: 0.7;
-  border: 12px solid orange;
+/*  border: 12px solid orange;*/
+
 }
 
 #nav-wrapper {
-width:465px;
+width:280px;
 margin:0 auto;
-padding:20px 0;
-background:#dddddd;
+padding-right:20px;
+background:#437dcc;
+float: right;
 }
 
 ul#nav {
@@ -156,6 +158,8 @@ border-left:2px solid #815444;
   outline: none;
 }
 
+
+
 .center {
   margin: 0 auto;
 }
@@ -164,6 +168,20 @@ border-left:2px solid #815444;
   display: none;
 }
 
+.big-box {
+  width: 60%;
+}
 
+.smack {
+  border-bottom: 6px solid #437dcc;
+}
 
+.individual-comment {
+  background: #eeeeee;
+  border-bottom: 4px solid #cccccc;
+}
+
+.comeback-class {
+  border-bottom: 4px solid #f69c55;
+}
 
