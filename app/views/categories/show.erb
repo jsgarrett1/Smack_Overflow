@@ -6,19 +6,19 @@
 
 <div class="center big-box">
   <% if logged_in? %>
-  <a href="/categories/<%= @category.id %>/smacks/new">Create a Smack!</a>
+  <a class="create-smack-link" href="/categories/<%= @category.id %>/smacks/new">Create a Smack!</a>
 
 
   <% end %>
-  <h1><%= @category.topic %></h1>
+  <h1 class="cat-name"><%= @category.topic %></h1>
 <% @category.smacks.each do |smack| %>
-  <div>
-    <a href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
+  <div class="smack">
+    <a class="smack-link"href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
     <p><%= smack.description %></p>
     <h3><%= total_votes(smack) %> Points</h3>
     <h3><%= smack.comebacks.count %> Comebacks</h3>
-    <h6><%= smack.user.username %></h6>
-    <h6><%= smack.created_at %></h6>
+    <h6><%= smack.user.username %> | <%= smack.created_at.strftime('%m/%d/%Y') %></h6>
+    <h6></h6>
   </div>
 <% end %>
 </div>
