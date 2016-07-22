@@ -2,10 +2,14 @@
 <% @images = ["images/kimk.jpg", "images/socialmedia.jpg", "images/videogames.jpg", "images/politics.jpg", "images/coding.jpg", "images/sports.jpg"] %>
 <% @categories.each do |category| %>
 
+
 <div class="no-gutters">
   <div class="col-md-4 no-gutters">
     <div class="home-categories">
-      <a href='/categories/<%= category.id %>'><img src='<%= @images[@counter] %>'></a>
+          <a href='/categories/<%= category.id %>'>
+          <img src='<%= @images[@counter] %>'>
+          </a>
+
     </div>
   </div>
 </div>

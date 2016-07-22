@@ -26,11 +26,12 @@
       <a href='/'><img src="http://i.imgur.com/KXhxqit.png" alt="Smack Overflow"></a>
       <div id="nav-wrapper">
         <ul id="nav">
-        <% if @user %>
+        <% if session[:user_id] != nil %>
           <li><form method="post" action='/users/logout'>
             <input name="_method" type="hidden" value="delete"><input type="submit" value="Log out"></li>
           </form>
           <br>
+          <% @user = User.find(session[:user_id]) %>
           <p>Hi <%= @user.username %></p>
 
           <p>You have <%= @user.user_points %> Smack points!</p>

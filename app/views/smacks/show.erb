@@ -1,7 +1,8 @@
 <div class="center big-box">
   <a href="/categories/<%= @smack.category.id %>">Back to <%= @smack.category.topic.capitalize %></a>
-
-
+<% p '==========================================' %>
+<% p session[:userd_id] %>
+<% p '==========================================' %>
 <div id="smack_talk">
 <div class="smack">
 <h2><%= @smack.title %></h2>
@@ -26,7 +27,9 @@
       </div>
   </div>
   <% end %>
+  <% if session[:user_id] != nil %>
   <button id="new_smack_comment_button" class="button center">New Smack Comment</button>
+  <% end %>
   <div class="row">
  <div class="col-md-4 col-md-offset-4 login-register">
     <form id="smack_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comments/new"class="add-form">
@@ -62,8 +65,9 @@
   <% end %>
 <div class="row">
  <div class="col-md-4 col-md-offset-4 login-register">
+  <% if session[:user_id] != nil %>
     <button id="new_comeback_comment_button" class="button center">New Comeback Comment</button>
-
+  <% end %>
     <form id="comeback_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/<%= comeback.id %>/comments/new">
     <label for="smack_comment">Comment:</label><br>
     <textarea id="comeback_comment" name="comeback_comment"></textarea>
@@ -74,7 +78,9 @@
 <% end %>
 </div>
 </div>
+<% if session[:user_id] != nil %>
 <button id="new_comeback_button" class="button center">New Comeback</button>
+<% end %>
 <form id="new_comeback_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/new">
   <label for="comeback">Comeback:</label><br>
   <textarea id="comeback" name="comeback"></textarea>

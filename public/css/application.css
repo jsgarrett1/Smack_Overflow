@@ -92,6 +92,7 @@ th {
 }
 
 .home-categories img {
+  position: relative;
   width: 664px;
   height: 664px;
 }
@@ -124,6 +125,8 @@ th {
 
 }
 
+
+
 #nav-wrapper {
 width:280px;
 margin:0 auto;
@@ -150,8 +153,8 @@ ul#nav li a {
 text-decoration:none;
 display: block;
 padding:5px 21px;
-background:#666;
-color:#ddd;
+background:#f69c55;
+color: black;
 float:left;
 text-align:center;
 border-top:2px solid #555555;
@@ -377,3 +380,21 @@ border-left:2px solid #815444;
   font-size: 26px;
 
 }
+
+#wrapper .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+}
+
+#wrapper:hover .text {
+  visibility:visible;
+}
+
+#center-text {
+  position: fixed;
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
