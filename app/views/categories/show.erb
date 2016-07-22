@@ -4,7 +4,7 @@
 
 </div>
 
-<div>
+<div class="center big-box">
   <% if logged_in? %>
   <a href="/categories/<%= @category.id %>/smacks/new">Create a Smack!</a>
 
@@ -15,8 +15,8 @@
   <div>
     <a href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>
     <p><%= smack.description %></p>
-    <h3><%= total_votes(smack) %></h3>
-    <h3><%= smack.comebacks.count %></h3>
+    <h3><%= total_votes(smack) %> Points</h3>
+    <h3><%= smack.comebacks.count %> Comebacks</h3>
     <h6><%= smack.user.username %></h6>
     <h6><%= smack.created_at %></h6>
   </div>
