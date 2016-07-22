@@ -333,3 +333,47 @@ border-left:2px solid #815444;
 .vote-button:hover input {
   background-color: #f69c55;
 }
+
+/*#new_comeback_button {
+  margin: 30px;
+}*/
+/*#new_comeback_comment_button {
+  margin: 30px;
+}*/
+
+
+#new_comeback_form {
+  display: none;
+  padding-top: 15px;
+  font-size: 20px;
+  padding-top: 15px;
+  font-size: 12px;
+  height: 250px;
+  width: 600px;
+  font-size: 26px;
+}
+
+#comeback_comment_form {
+  display: none;
+  padding-top: 15px;
+  font-size: 20px;
+  padding-top: 15px;
+  font-size: 12px;
+  height: 250px;
+  width: 600px;
+  font-size: 26px;
+
+}
+
+#smack_comment_form {
+
+  display: none;
+  padding-top: 15px;
+  font-size: 20px;
+  padding-top: 15px;
+  font-size: 12px;
+  height: 250px;
+  width: 600px;
+  font-size: 26px;
+
+}
