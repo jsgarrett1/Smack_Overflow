@@ -1,3 +1,23 @@
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.col-md-4 {
+  padding-left: 0px;
+}
+
+element.style {
+
+  padding-left: 0px;
+}
+
 #topbar {
   width: 100%;
   background: #437dcc;
@@ -12,9 +32,10 @@
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
-#logo {
-  width: 18%;
-  height: 18%;
+
+#topbar a img {
+  width: 540px;
+  height: 103px;
 }
 
 
@@ -58,17 +79,17 @@ th {
 
 .home-categories {
   display: inline-block;
-  margin: auto;
+/*  margin: auto;*/
   padding: 0;
   border: 0;
-  vertical-align: top;
+  /*vertical-align: top;*/
 
-  text-align: center;
+/*  text-align: center;*/
 }
 
 .home-categories img {
-  width: 492px;
-  height: 492px;
+  width: 664px;
+  height: 664px;
 }
 
 
