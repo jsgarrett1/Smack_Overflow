@@ -20,6 +20,51 @@ $(document).ready(function() {
 
   });
 
+    $(".vote-button").on("click", function () {
+        event.preventDefault();
+    var self = $(this)
+    var form = $('.form_class')
+    var formUrl = $(this).attr('action')
+    console.log(formUrl);
+    $.ajax({
+      url: formUrl,
+      method: 'post',
+      data: {
+      }
+    })
+    .done(function(response) {
+      console.log(response);
+      console.log(self.parent().find('.points'));
+      self.parent().find('.points').text(response);
+    });
+  });
+
+  $(".xyz_comeback").css("padding", "20px");
+
+  //   $(".xyz_comeback").on("click", function (event) {
+  //       event.preventDefault();
+
+  //   var self = $(this);
+  //   console.log(self);
+  //   console.log(event);
+  //   var form = $('.form_class')
+  //   var formUrl = $(this).attr('action')
+  //   $(this).css('color', 'red');
+
+  //   $.ajax({
+  //     url: formUrl,
+  //     method: 'post',
+  //     data: {
+  //     }
+  //   })
+  //   .done(function(response) {
+  //     console.log(response);
+  //     console.log(self.parents("#comebacks"));
+  //     // .find('.comeback-points')
+  //     // .text(response);
+  //   });
+  // });
+
   // $('#new_comeback_form').submit( function(event) {
 
   //   event.preventDefault();
