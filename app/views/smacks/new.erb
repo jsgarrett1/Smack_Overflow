@@ -1,3 +1,5 @@
+<div class="row">
+ <div class="col-md-4 col-md-offset-4 login-register">
 <div class="big-box">
 <% if @errors %>
   <span>Something went wrong:</span>
@@ -9,14 +11,15 @@
 <% end %>
 
 <form method="post" action="/categories/<%= @category.id %>/smacks">
-  <label for="title-input">Title:</label>
+  <label for="title-input">Title:</label><br>
   <input id="title-input" name="title" type="text" value="">
   <br>
   <br>
-  <label for="body-textarea">Description:</label>
-  <textarea id="body-textarea" name="description" tabindex="2" value=""></textarea>
+  <label for="body-textarea">Description:</label><br>
+  <textarea id="body-textarea" name="description" tabindex="2" value="" placeholder="Fuck you"></textarea>
   <br>
   <br>
   <input type="submit" value="Post" tabindex="3" class="">
 </form>
+</div>
 </div>

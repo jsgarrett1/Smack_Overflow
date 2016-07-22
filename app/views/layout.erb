@@ -6,30 +6,35 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
 
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>smackOverflow</title>
 </head>
 <body>
+  <%@logo_url = 'images/smack_overflow_logo.png' %>
   <header>
     <nav id="topbar">
-      <a href='/'><img id="logo" src="images/smack_overflow_logo.png" alt="Smack Overflow"></a>
+      <a href='/'><img src="http://i.imgur.com/KXhxqit.png" alt="Smack Overflow"></a>
       <div id="nav-wrapper">
         <ul id="nav">
-        <% if @user %>
+        <% if session[:user_id] != nil %>
           <li><form method="post" action='/users/logout'>
             <input name="_method" type="hidden" value="delete"><input type="submit" value="Log out"></li>
           </form>
-          <li>Hi <%= @user.username %></li>
+          <br>
+          <% @user = User.find(session[:user_id]) %>
+          <p>Hi <%= @user.username %></p>
 
-          <li>You have <%= @user.user_points %> Smack points!</li>
+          <p>You have <%= @user.user_points %> Smack points!</p>
 
         <% else %>
           <li><a href="/users/login">Login</a></li>

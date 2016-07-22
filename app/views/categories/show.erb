@@ -1,8 +1,5 @@
 <!-- NAVBAR -->
-<div class="topbar">
 
-
-</div>
 
 <div class="center big-box">
   <% if logged_in? %>
@@ -10,7 +7,7 @@
 
 
   <% end %>
-  <h1 class="cat-name"><%= @category.topic %></h1>
+  <strong><h1 class="cat-name"><%= @category.topic %></h1></strong>
 <% @category.smacks.each do |smack| %>
   <div class="smack">
     <a class="smack-link"href="/category/<%= smack.category.id %>/smacks/<%= smack.id %>"><%= smack.title %></a>

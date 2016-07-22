@@ -54,6 +54,9 @@ post '/categories/:category_id/smacks/:smack_id/comebacks/new' do
     smack = Smack.find(params[:smack_id])
     comeback = Comeback.create(description: params[:comeback], user: user, smack: smack)
     puts "worked"
+    comeback_response = {description: comeback.description, username: comeback.user.username, vote_total: total_votes(comeback), timestamp: comeback.created_at.strftime('%m/%d/%Y')}
+    comeback_json = JSON.generate(comeback_response)
+    return comeback_json
   else
     user = User.find(session[:user_id])
     category = Category.find(params[:category_id])
@@ -70,12 +73,12 @@ post "/categories/:category_id/smacks/:smack_id/comments/new" do
   if request.xhr?
     user = User.find(session[:user_id])
     smack = Smack.find(params[:smack_id])
-    comment = Comment.create(description: params[:smack_comment], user: user, smack: smack)
+    comment = Comment.create(description: params[:smack_comment], user: user, commentable_id: smack.id, commentable_type: 'Smack')
   else
     user = User.find(session[:user_id])
     category = Category.find(params[:category_id])
     smack = Smack.find(params[:smack_id])
-    comment = Comment.create(description: params[:smack_comment], user: user, smack: smack)
+    comment = Comment.create(description: params[:smack_comment], user: user, commentable_id: smack.id, commentable_type: 'Smack')
     redirect "/category/#{category.id}/smacks/#{smack.id}"
   end
 
