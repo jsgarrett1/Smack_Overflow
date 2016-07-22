@@ -28,13 +28,23 @@ end
 post '/smacks/:id/up_vote' do
   @smack = Smack.find(params[:id])
   @smack.votes.create(value: 1)
-  erb :'smacks/show'
+
+  if request.xhr?
+    total_votes(@smack).to_s
+  else
+    erb :'smacks/show'
+  end
 end
 
 post '/smacks/:id/down_vote' do
   @smack = Smack.find(params[:id])
   @smack.votes.create(value: -1)
-  erb :'smacks/show'
+
+  if request.xhr?
+    total_votes(@smack).to_s
+  else
+    erb :'smacks/show'
+  end
 end
 
 post '/categories/:category_id/smacks/:smack_id/comebacks/new' do

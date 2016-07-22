@@ -58,6 +58,23 @@ $(document).ready(function() {
     $('#comeback_comment_form').css('display', 'inline');
     console.log('worked')
 
+    $(".vote-button").on("click", function () {
+        event.preventDefault();
+    var self = $(this)
+    var form = $('.form_class')
+    var formUrl = $(this).attr('action')
+    console.log(formUrl);
+    $.ajax({
+      url: formUrl,
+      method: 'post',
+      data: {
+      }
+    })
+    .done(function(response) {
+      console.log(response);
+      console.log(self.parent().find('.points'));
+      self.parent().find('.points').text(response + " Points");
+    });
   });
 
 });

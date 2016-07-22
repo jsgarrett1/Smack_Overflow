@@ -1,17 +1,17 @@
-<a href="/categories/<%= @smack.category.id %>">Back to <%= @smack.category.topic.capitalize %></a>
+<div class="center big-box">
+  <a href="/categories/<%= @smack.category.id %>">Back to <%= @smack.category.topic.capitalize %></a>
 
 
 <div id="smack_talk">
 <div class="smack">
 <h2><%= @smack.title %></h2>
-<form method="post" action='/smacks/<%= "#{@smack.id}" %>/up_vote'>
+<form class="vote-button" method="post" action='/smacks/<%= "#{@smack.id}" %>/up_vote'>
 <input type="submit" value="Upvote"></form>
-<form method="post" action='/smacks/<%= "#{@smack.id}" %>/down_vote'>
+<form class="vote-button" method="post" action='/smacks/<%= "#{@smack.id}" %>/down_vote'>
 <input type="submit" value="Downvote"></form>
 <p><%= @smack.description %></p>
-<h4><%= total_votes(@smack) %></h4>
-<h6><%= @smack.user.username %></h6>
-<h6><%= @smack.created_at %></h6>
+<h4 class="points"><%= total_votes(@smack) %> Points</h4>
+<h6><%= @smack.user.username %> | <%= @smack.created_at.strftime('%m/%d/%Y') %></h6>
 </div>
 <!-- <input name="_method" type="hidden" value="post"> -->
 <br>
@@ -20,9 +20,9 @@
   <% @smack.comments.each do |comment| %>
       <div class="individual-comment">
         <p><%= comment.description %></p>
-        <h4><%= total_votes(comment) %></h4>
-        <h6><%= comment.user.username %></h6>
-        <h6><%= comment.created_at %></h6>
+        <h4 class="points"><%= total_votes(comment) %></h4>
+        <h6><%= comment.user.username %> | <%= comment.created_at %></h6>
+        <h6></h6>
       </div>
   </div>
   <% end %>
@@ -34,24 +34,25 @@
   </form>
   <div id="comebacks">
     <% @smack.comebacks.each do |comeback| %>
+    <div class="comeback-class">
     <form class="vote-button" method="post" action='/comebacks/<%= "#{comeback.id}" %>/up_vote'>
     <input type="submit" value="Upvote"></form>
     <form class="vote-button" method="post" action='/comebacks/<%= "#{comeback.id}" %>/down_vote'>
 <input type="submit" value="Downvote"></form>
     <div class="individual-comeback">
       <h4><%= comeback.description %></h4>
-      <h4><%= total_votes(comeback) %></h4>
-      <h6><%= comeback.user.username %></h6>
-      <h6><%= comeback.created_at.strftime('%m/%d/%Y') %></h6>
+      <h4 class="points"><%= total_votes(comeback) %> Points</h4>
+      <h6><%= comeback.user.username %> | <%= comeback.created_at.strftime('%m/%d/%Y') %></h6>
+      <h6></h6>
     </div>
   </div>
   <div id="comebacks_comments">
     <% comeback.comments.each do |comment| %>
       <div class="individual-comment">
         <p><%= comment.description %></p>
-        <h4><%= total_votes(comment) %></h4>
-        <h6><%= comment.user.username %></h6>
-        <h6><%= comment.created_at.strftime('%m/%d/%Y') %></h6>
+        <h4 class="points"><%= total_votes(comment) %></h4>
+        <h6><%= comment.user.username %> | <%= comment.created_at.strftime('%m/%d/%Y') %></h6>
+        <h6></h6>
       </div>
   </div>
   <% end %>
@@ -63,9 +64,11 @@
   </form>
 <% end %>
 </div>
+</div>
 <button id="new_comeback_button" class="button center">New Comeback</button>
 <form id="new_comeback_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/new"class="center hidden">
   <label for="comeback">Comeback:</label>
   <textarea id="comeback" name="comeback"></textarea>
   <input type="submit" class="button" value="Submit Comeback"></input>
 </form>
+</div>
