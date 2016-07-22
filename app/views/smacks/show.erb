@@ -27,11 +27,15 @@
   </div>
   <% end %>
   <button id="new_smack_comment_button" class="button center">New Smack Comment</button>
-    <form id="smack_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comments/new"class="center hidden">
-    <label for="smack_comment">Comment:</label>
+  <div class="row">
+ <div class="col-md-4 col-md-offset-4 login-register">
+    <form id="smack_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comments/new"class="add-form">
+    <label for="smack_comment">Comment:</label><br>
     <textarea id="smack_comment" name="smack_comment"></textarea>
-    <input type="submit" class="button" value="Submit Comment"></input>
+    <input type="submit" class="button center" value="Submit Comment"></input>
   </form>
+</div>
+</div>
   <div id="comebacks">
     <% @smack.comebacks.each do |comeback| %>
     <div class="comeback-class">
@@ -57,18 +61,27 @@
   </div>
   <% end %>
     <button id="new_comeback_comment_button" class="button center">New Comeback Comment</button>
-    <form id="comeback_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/<%= comeback.id %>/comments/new"class="center hidden">
-    <label for="smack_comment">Comment:</label>
+    <div class="row">
+ <div class="col-md-4 col-md-offset-4 login-register">
+    <form id="comeback_comment_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/<%= comeback.id %>/comments/new"class="add-form">
+    <label for="smack_comment">Comment:</label><br>
     <textarea id="comeback_comment" name="comeback_comment"></textarea>
-    <input type="submit" class="button" value="Submit Comment"></input>
+    <input type="submit" class="button center" value="Submit Comment"></input>
   </form>
 <% end %>
 </div>
 </div>
+</div>
+</div>
 <button id="new_comeback_button" class="button center">New Comeback</button>
-<form id="new_comeback_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/new"class="center hidden">
-  <label for="comeback">Comeback:</label>
+<div class="row">
+ <div class="col-md-4 col-md-offset-4 login-register">
+
+<form id="new_comeback_form" method="post" action="/categories/<%= @smack.category.id %>/smacks/<%= @smack.id %>/comebacks/new" class="add-form">
+  <label for="comeback">Comeback:</label><br>
   <textarea id="comeback" name="comeback"></textarea>
-  <input type="submit" class="button" value="Submit Comeback"></input>
+  <input type="submit" class="button center" value="Submit Comeback"></input>
 </form>
+</div>
+</div>
 </div>

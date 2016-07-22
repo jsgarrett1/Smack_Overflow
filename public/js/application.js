@@ -5,14 +5,14 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-  $('#new_comeback_button').on('click', function() {
+  $('#new_comeback_button').on('click', 'button', function() {
     $(this).css('display', 'none');
-    $('#new_comeback_form').css('display', 'inline');
+    $('#new_comeback_form').css('display', 'block');
 
   });
 
 
-  $('#new_comeback_form').on('submit', function(event) {
+  $('#new_comeback_form').on('submit', 'button', function(event) {
 
     event.preventDefault();
     var comeback_content = $("#comeback").val();
@@ -45,18 +45,20 @@ $(document).ready(function() {
 
   });
 
-  $('#new_smack_comment_button').on('click', function() {
+  $('#new_smack_comment_button').on('click', 'button', function() {
 
     $(this).css('display', 'none');
     $('#smack_comment_form').css('display', 'inline');
 
   });
 
-  $('#new_comeback_comment_button').on('click', function() {
+  $('#new_comeback_comment_button').on('click', 'button', function() {
 
     $(this).css('display', 'none');
     $('#comeback_comment_form').css('display', 'inline');
     console.log('worked')
+
+  });
 
     $(".vote-button").on("click", function () {
         event.preventDefault();
@@ -77,6 +79,6 @@ $(document).ready(function() {
     });
   });
 
-});
+
 
 });

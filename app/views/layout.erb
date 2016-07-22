@@ -30,9 +30,10 @@
           <li><form method="post" action='/users/logout'>
             <input name="_method" type="hidden" value="delete"><input type="submit" value="Log out"></li>
           </form>
-          <li>Hi <%= @user.username %></li>
+          <br>
+          <p>Hi <%= @user.username %></p>
 
-          <li>You have <%= @user.user_points %> Smack points!</li>
+          <p>You have <%= @user.user_points %> Smack points!</p>
 
         <% else %>
           <li><a href="/users/login">Login</a></li>
